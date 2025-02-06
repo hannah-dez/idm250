@@ -1,0 +1,118 @@
+:root {
+    --main-green: #385618;
+    --accent-color-one: #FFE46C;
+    --dark-text: #181F1C;
+    --transparent-main-green: rgba(56,86,24,0.75);
+}
+
+main{
+    display: block;
+    max-width: 80vw;
+    margin: auto;
+}
+/*--Header--*/
+
+header{
+    background-color: var(--main-green);
+    margin: 0;
+    position: relative;
+}
+header img{
+    width: 100%;
+    height:60vh;
+    margin: 0;
+    z-index: 2;
+}
+.hero-header{
+    background-color: var(--transparent-main-green);
+    color: white;
+    z-index: 4;
+    position:absolute;
+    top: 50%; /* Adjust this value as needed */
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centers it over the image */
+    width: fit-content; 
+    text-align: center; 
+    padding: 80px 40px;
+}
+
+/*--Menu--*/
+.menu-primary-menu-container{
+    justify-content: center;
+}
+a{
+    color: white;
+    text-decoration: none;
+}
+.abt-button{
+    background-color: var(--accent-color-one);
+    color: var(--dark-text);
+    border: none;
+    width: fit-content;
+    padding: 10px;
+    z-index: 5;
+    position: absolute;
+    top: 5%;
+    left: 2%;
+}
+.abt-button:hover{
+    cursor: pointer;
+    background-color: #E7C427;
+}
+.abt-button a{
+    color: var(--dark-text);
+}
+ul#menu-primary-menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    list-style-type: none;
+    margin: auto;
+}
+
+.menu-item{
+    padding: 15px;
+    color: white;
+    margin: 0px 5px;
+}
+.menu-item:hover{
+    cursor: pointer;
+}
+
+/*--Footer--*/
+
+footer{
+    background-color: var(--main-green);
+    color: white;
+    display: grid;
+    grid-template-columns: repeat(1fr, 1fr);
+}
+footer p{
+    grid-column-start: 2;
+    margin-top: 30px;
+}
+
+p{
+    margin: 10px;
+}
+#menu-footer-menu{
+    list-style-type: none;
+    margin: auto;
+}
+
+/*--Post Page--*/
+h1{
+    margin: auto;
+}
+.main-content{
+    width: 80vw;
+    display: block;
+
+}
+.wp-block-gallery{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+
+}
