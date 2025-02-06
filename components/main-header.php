@@ -1,5 +1,9 @@
 <header>
-    <img width="100%" src="<?php echo get_stylesheet_directory_uri()?>/dist/images/mainhero_img.jpeg" alt="super cool image">
+    <?php if(has_post_thumbnail()):?>
+    <div class="featured-image">
+    <?php echo the_post_thumbnail();?>
+    </div>
+    <?php endif; ?>
     <button class="abt-button">
             <a>About</a>
 </button>
