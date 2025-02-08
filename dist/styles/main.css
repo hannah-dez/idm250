@@ -140,3 +140,29 @@ h3{
     border: var(--main-green) solid 25px;
     margin-top: 24px;
 }
+
+.wp-block-button__link{
+    background-color: var(--accent-color-one);
+    color: var(--dark-text);
+    border: none;
+    border-radius: 0px;
+    width: fit-content;
+    padding: 10px;
+}
+.wp-block-button__link:hover{
+    cursor: pointer;
+    background-color: #E7C427;
+}
+.wp-block-button__link a{
+    color: var(--dark-text);
+}
+
+.wp-block-gallery{
+    background-color: var(--main-green);
+    border: var(--main-green) solid 9px;
+}
+
+.wp-block-pullquote{
+    background-color: var(--main-green);
+    color: var(--accent-color-one);
+}
