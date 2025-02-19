@@ -4,10 +4,10 @@
         'theme_location'=>'footer-menu', //for the theme location i want to output primary menu
     ]);
 ?>
-    <p>SOCIALS <br><br>
-    © 2025 Outdoors.com | A Savage Ventures Brand
-    Privacy Policy | Terms & Conditions</p>
-    </footer>
+    <div>
+    <?php dynamic_sidebar('footer-widget');?>
+    </div>    
+</footer>
     <?php wp_footer(); ?>
 </body>
 </html>

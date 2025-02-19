@@ -30,4 +30,13 @@ function theme_setup(){
 
 add_action('after_setup_theme','theme_setup');
 
-
+function register_custom_sidebar()
+{
+    register_sidebar([
+        'name' => 'Footer Widget',
+        'id' => 'footer-widget',
+        'description' => 'Widgets in this area will be shown in the Primary.',
+    ]);
+}
+add_action('widgets_init', 'register_custom_sidebar');
+?>
