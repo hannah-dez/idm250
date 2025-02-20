@@ -21,6 +21,10 @@
             </div>
         </article>
     <?php endwhile; endif; ?>
+
+    <?php//Related Posts Attempts
+    // get_template_part('components/related-posts.php);
+    // ?>
 </main>
 
 <?php get_footer(); ?>
