@@ -1,4 +1,4 @@
-<?php get_header();?>
+<?php get_header('simple');?>
 <?php if(have_posts()) :?>
     <h1><?php the_archive_title();?></h1>
 

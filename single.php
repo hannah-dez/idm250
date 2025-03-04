@@ -1,4 +1,4 @@
-<?php get_header(); ?>
+<?php get_header('simple'); ?>
 
 <main class="post-container">
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
