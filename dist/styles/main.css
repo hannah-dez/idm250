@@ -17,6 +17,7 @@ p{
     width: 100%;
     display: block;
     margin: auto;
+    margin-bottom: 20px;
 }
 /*--Header--*/
 
@@ -117,6 +118,7 @@ h1{
     margin: auto;
     text-align: center;
     max-width: 50vw;
+    margin-bottom: 20px;
 }
 h2{
     margin: 24px auto auto;
@@ -143,9 +145,6 @@ h6{
     margin: auto;
 }
 
-.post-container{
-    width: 70vw;
-}
 .wp-block-gallery{
     width: 100vw;
     display: flex;
@@ -153,6 +152,7 @@ h6{
     flex-direction: row;
     padding: auto 50px;
     margin-left: calc(-50vw + 50%);
+    margin-top: 15px;
     background-color: var(--main-green);
     border: var(--main-green) solid 9px;
 }
@@ -195,7 +195,7 @@ figure.wp-block-image{
     background-color: var(--main-green);
     color: var(--accent-color-one);
     padding: 60px 0px;
-    width: 100vw;
+    max-width: 100vw;
     background-image: url(../images/quote-background.png);
     background-size: 80vw 150%;
     background-repeat: no-repeat;
@@ -236,13 +236,37 @@ ul.wp-block-list{
 }
 
 .wp-block-table{
-    width: 80vw;
+    max-width: 80vw;
     margin: 20px auto;
 }
 
 .wp-block-buttons{
     margin-left:10vw;
     margin-bottom: 10px;
+}
+
+table.has-fixed-layout{
+    border-collapse: collapse;
+    border: 5px solid var(--main-green);
+}
+tr, td{
+    border: 5px solid var(--main-green);
+}
+
+.wp-block-columns{
+    max-width: 80vw;
+    margin: 20px auto;
+    column-gap: 10px;
+}
+
+ol+li{
+    background-image: none;
+    list-style-type: style;;
+    background-color: none;
+}
+/*----Skinn Template----*/
+.small-stuff{
+    max-width: 50vw;
 }
 /*---404 Page----*/
 div.error-message{
