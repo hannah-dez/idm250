@@ -42,7 +42,6 @@ add_action('widgets_init', 'register_custom_sidebar');
 ?>
 
 
-
 <?php //CUSTOM MENU BUTTON YAHHHH thank you chat
  function add_custom_menu_field($item_id, $item, $depth, $args) {
     $feature_button = get_post_meta($item_id, '_feature_button', true);
@@ -75,35 +74,92 @@ function add_feature_class_to_menu($classes, $item) {
 add_filter('nav_menu_css_class', 'add_feature_class_to_menu', 10, 2);
 
 //Header stuff
-function custom_hero_customizer($wp_customize) {
-    // Add a section for the Hero Image
-    $wp_customize->add_section('hero_section', array(
-        'title'       => __('Hero Settings', 'your-theme'),
-        'priority'    => 30,
-    ));
+function mytheme_customize_register($wp_customize) {
+    // Add a section for the hero header
+    $wp_customize->add_section('hero_section', [
+        'title'    => __('Hero Section', 'mytheme'),
+        'priority' => 30,
+    ]);
+
+    // Add setting for the hero title
+    $wp_customize->add_setting('hero_title', [
+        'default'   => 'Outdoors',
+        'transport' => 'refresh',
+        'sanitize_callback' => 'sanitize_text_field',
+    ]);
+
+    // Add control for the hero title
+    $wp_customize->add_control('hero_title_control', [
+        'label'   => __('Hero Title', 'mytheme'),
+        'section' => 'hero_section',
+        'settings' => 'hero_title',
+        'type'    => 'text',
+    ]);
+
+    // Add setting for the hero subtitle
+    $wp_customize->add_setting('hero_subtitle', [
+        'default'   => 'The Best Site for all your Outdoor Adventures',
+        'transport' => 'refresh',
+        'sanitize_callback' => 'sanitize_text_field',
+    ]);
+
+    // Add control for the hero subtitle
+    $wp_customize->add_control('hero_subtitle_control', [
+        'label'   => __('Hero Subtitle', 'mytheme'),
+        'section' => 'hero_section',
+        'settings' => 'hero_subtitle',
+        'type'    => 'text',
+    ]);
 
     // Add Hero Image Setting
-    $wp_customize->add_setting('hero_image', array(
-        'default'   => get_template_directory_uri() . '/assets/default-hero.jpg', // Default image
+    $wp_customize->add_setting('hero_image', [
+        'default'   => get_template_directory_uri() . '/dist/images/mainhero_img.jpeg', // Default image
         'transport' => 'refresh',
-    ));
+        'sanitize_callback' => 'esc_url_raw',
+    ]);
 
-    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'hero_image_control', array(
-        'label'    => __('Hero Image', 'your-theme'),
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'hero_image_control', [
+        'label'    => __('Hero Image', 'mytheme'),
         'section'  => 'hero_section',
         'settings' => 'hero_image',
-    )));
+    ]));
+}
+add_action('customize_register', 'mytheme_customize_register');
 
-    // Add Hero Background Color Setting
-    $wp_customize->add_setting('hero_bg_color', array(
-        'default'   => '#333333', // Default color
+
+//quote image customizer
+function custom_quote_customizer($wp_customize) {
+    // Add a section for the Quote Background Image
+    $wp_customize->add_section('quote_section', array(
+        'title'    => __('Quote Section', 'your-theme'),
+        'priority' => 35,
+    ));
+
+    // Add setting for the Quote Background Image
+    $wp_customize->add_setting('quote_background_image', array(
+        'default'   => get_template_directory_uri() . '/dist/images/quote-image.png', // Default fallback image
         'transport' => 'refresh',
     ));
 
-    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'hero_bg_color_control', array(
-        'label'    => __('Hero Background Color', 'your-theme'),
-        'section'  => 'hero_section',
-        'settings' => 'hero_bg_color',
+    // Add control for the Quote Background Image
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'quote_background_image_control', array(
+        'label'    => __('Quote Background Image', 'your-theme'),
+        'section'  => 'quote_section',
+        'settings' => 'quote_background_image',
     )));
 }
-add_action('customize_register', 'custom_hero_customizer');
+add_action('customize_register', 'custom_quote_customizer');
+
+
+function custom_quote_styles() {
+    $quote_bg = get_theme_mod('quote_background_image', get_template_directory_uri() . '/dist/images/quote-image.png');
+
+    if ($quote_bg) {
+        echo '<style>
+            blockquote.wp-block-quote {
+                background-image: url("' . esc_url($quote_bg) . '") !important;
+            }
+        </style>';
+    }
+}
+add_action('wp_head', 'custom_quote_styles'); 
