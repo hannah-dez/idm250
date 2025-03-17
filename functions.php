@@ -30,19 +30,41 @@ function theme_setup(){
 
 add_action('after_setup_theme','theme_setup');
 
-function register_custom_sidebar()
-{
+function register_custom_sidebars() {
     register_sidebar([
-        'name' => 'Footer Widget',
-        'id' => 'footer-widget',
-        'description' => 'Widgets in this area will be shown in the Primary.',
+        'name'          => 'Footer Contact Section',
+        'id'            => 'footer-contact',
+        'description'   => 'Widgets in this area will display contact information in the footer.',
+        'before_widget' => '<div class="footer-widget contact-widget">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h3 class="widget-title">',
+        'after_title'   => '</h3>',
+    ]);
+
+    register_sidebar([
+        'name'          => 'Footer Menu Section',
+        'id'            => 'footer-menu',
+        'description'   => 'Widgets in this area will display a navigation menu in the footer.',
+        'before_widget' => '<div class="footer-widget menu-widget">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h3 class="widget-title">',
+        'after_title'   => '</h3>',
+    ]);
+
+    register_sidebar([
+        'name'          => 'Footer Copyright Section',
+        'id'            => 'footer-copyright',
+        'description'   => 'Widgets in this area will display copyright information in the footer.',
+        'before_widget' => '<div class="footer-widget copyright-widget">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h3 class="widget-title">',
+        'after_title'   => '</h3>',
     ]);
 }
-add_action('widgets_init', 'register_custom_sidebar');
-?>
+add_action('widgets_init', 'register_custom_sidebars');
 
 
-<?php //CUSTOM MENU BUTTON YAHHHH thank you chat
+//CUSTOM MENU BUTTON YAHHHH thank you chat
  function add_custom_menu_field($item_id, $item, $depth, $args) {
     $feature_button = get_post_meta($item_id, '_feature_button', true);
     ?>

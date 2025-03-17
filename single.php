@@ -26,5 +26,4 @@
     // get_template_part('components/related-posts.php);
     // ?>
 </main>
-
-<?php get_footer(); ?>
+<?php get_footer();?>
