@@ -192,6 +192,13 @@ h6{
     margin: 40px auto;
 }
 
+.wp-element-caption a{
+    color: var(--background);
+    font-family: 'HeadingFont';
+    line-height: 150%;
+    margin-top: 10px;
+}
+
 .wp-block-gallery{
     width: 100vw;
     display: flex;
@@ -261,7 +268,7 @@ blockquote.wp-block-quote{
     padding: 50px;
     width: 100vw;
     height: 35vw;
-    margin-left: -10vw;
+    margin: 40px 0px 40px -10vw;
     background-image: url(../images/quote-image.png);
     background-repeat: no-repeat;
     background-size: 50%;
@@ -319,8 +326,9 @@ tr, td{
 
 .wp-block-columns{
     max-width: 80vw;
-    margin: 20px auto;
+    margin: 20px auto 50px;
     column-gap: 10px;
+    height: fit-content;
 }
 
 ol+li{
@@ -382,6 +390,10 @@ div.error-message{
 }
 
 /*Home Page*/
+.wp-block-column .wp-block-image.size-full{
+    height: 100%;
+}
+
 .project-image img{
     max-width: 40vw;
     height: auto;

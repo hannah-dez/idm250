@@ -1,5 +1,5 @@
 <?php
-
+//SCRIPTS
 function theme_styles_and_scripts() {
     wp_enqueue_style(
         'idm-normalize',
@@ -30,6 +30,7 @@ function theme_setup(){
 
 add_action('after_setup_theme','theme_setup');
 
+//FOOTER WIDGETS
 function register_custom_sidebars() {
     register_sidebar([
         'name'          => 'Footer Contact Section',
@@ -95,7 +96,7 @@ function add_feature_class_to_menu($classes, $item) {
 }
 add_filter('nav_menu_css_class', 'add_feature_class_to_menu', 10, 2);
 
-//Header stuff
+//HEADER CUSTOMIZATION
 function mytheme_customize_register($wp_customize) {
     // Add a section for the hero header
     $wp_customize->add_section('hero_section', [
@@ -149,7 +150,7 @@ function mytheme_customize_register($wp_customize) {
 add_action('customize_register', 'mytheme_customize_register');
 
 
-//quote image customizer
+//QUOTE IMAGE
 function custom_quote_customizer($wp_customize) {
     // Add a section for the Quote Background Image
     $wp_customize->add_section('quote_section', array(
@@ -172,7 +173,7 @@ function custom_quote_customizer($wp_customize) {
 }
 add_action('customize_register', 'custom_quote_customizer');
 
-
+//DEFAULT QUOTE IMG
 function custom_quote_styles() {
     $quote_bg = get_theme_mod('quote_background_image', get_template_directory_uri() . '/dist/images/quote-image.png');
 
@@ -185,3 +186,5 @@ function custom_quote_styles() {
     }
 }
 add_action('wp_head', 'custom_quote_styles'); 
+
+//CUSTOM BLOCK- LOOP CATEGORY POSTS
