@@ -184,12 +184,24 @@ h5{
 
 h6{
     font-family: 'mainText';
+    font-size: 15px;
 }
 
+.wp-block-video{
+    max-width: 1000px;
+    margin: 20px auto;
+    border: solid 5px var(--main-green);
+}
 .main-content{
-    width: 80vw;
+    width: 70vw;
     display: block;
     margin: 40px auto;
+}
+
+.wp-element-caption{
+    color: var(--background);
+    font-family: 'mainText';
+    font-style: italic;
 }
 
 .wp-element-caption a{
@@ -255,7 +267,7 @@ figure.wp-block-pullquote{
     background-size: 80vw 150%;
     background-repeat: no-repeat;
     background-position: 50% 50%;
-    margin-left: -10vw;
+    margin-left: -15vw;
 }
 
 .wp-block-pullquote a{
@@ -268,7 +280,7 @@ blockquote.wp-block-quote{
     padding: 50px;
     width: 100vw;
     height: 35vw;
-    margin: 40px 0px 40px -10vw;
+    margin: 40px 0px 40px -15vw;
     background-image: url(../images/quote-image.png);
     background-repeat: no-repeat;
     background-size: 50%;
@@ -276,8 +288,8 @@ blockquote.wp-block-quote{
 }
 blockquote.wp-block-quote p{
     width: 45vw;
-    margin-left:-5px;
-    font-size: 35px;
+    margin-left:-10px;
+    font-size: 3vw;
     color: var(--background);
     font-weight: 300;
     font-family: 'HeadingFont';
@@ -286,7 +298,7 @@ blockquote.wp-block-quote p{
 ul.wp-block-list{
     max-width: 60vw;
     padding: 10px 50px;
-    color: var(--accent-color-one);
+    color: var(--background);
     margin: auto;
 }
 
@@ -298,6 +310,7 @@ ul.wp-block-list{
     border-radius: 10px;
     padding: 15px;
     list-style: none;
+    font-family: "mainText";
 }
 
 .wp-block-image{
@@ -346,6 +359,7 @@ ol+li{
     margin: 20px auto;
 }
 
+
 .small-stuff blockquote.wp-block-quote{
     background-color: var(--main-green);
     height: 60vw;
@@ -353,17 +367,22 @@ ol+li{
     background-image: url(../images/quote-image.png);
     background-repeat: no-repeat;
     background-size: 100%;
-    background-position: 0px 20vw;
+    background-position: 0px 25vw;
     margin: 20px auto;
 }
+.small-stuff blockquote{
+    width: 80%;
+    margin: auto;
+}
 .small-stuff blockquote.wp-block-quote p{
-    width: 50vw;
-    margin-left:-5px;
-    font-size: 35px;
-    height: 10vw;
+    width: 90%;
+    margin: auto;
+    font-size: 2.5vw;
+    height: fit-content;
     color: var(--background);
     font-weight: 300;
     font-family: 'HeadingFont';
+    line-height: 150%;
 }
 
 /*--Post Page--*/
