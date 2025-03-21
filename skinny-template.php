@@ -1,6 +1,6 @@
 <?php
 /*
-* Template Name: Sidebar Template
+* Template Name: Skinny Template
 */
 ?>
 <?php get_header();?>
