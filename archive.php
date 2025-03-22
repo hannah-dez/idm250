@@ -18,10 +18,10 @@
     <?php endwhile;?>
 </ul>
 
-<?php the_posts_pagnation(); ?>
+<?php the_posts_pagination(); ?>
 <?php else: ?>
     <p>No Posts Found</p>
 <?php endif; ?>
 </div>
-
+</div>
 <?php get_footer(); ?>

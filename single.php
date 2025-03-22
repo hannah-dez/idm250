@@ -7,7 +7,7 @@
             <div class="post-main-img">
                 <?php if (has_post_thumbnail()) : ?>
                     <div class="post-thumbnail">
-                        <?php the_post_thumbnail(); ?>
+                        <?php the_post_thumbnail('large'); ?>
                     </div>
                 <?php endif; ?>
                 <p class="post-meta">Published on <?php the_date(); ?> in <?php the_category(', '); ?></p>
@@ -21,9 +21,6 @@
             </div>
         </article>
     <?php endwhile; endif; ?>
-
-    <?php//Related Posts Attempts
-    // get_template_part('components/related-posts.php);
-    // ?>
 </main>
-<?php get_footer();?>
+
+<?php get_footer(); ?>
