@@ -18,6 +18,7 @@
             
             <div class="post-tags">
                 <?php the_tags('Tags: ', ', '); ?>
+                <?php the_category(', '); ?>
             </div>
         </article>
     <?php endwhile; endif; ?>

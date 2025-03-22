@@ -194,6 +194,11 @@ h6{
     margin: 20px auto;
     border: solid 5px var(--main-green);
 }
+.front-main-content{
+    width: 70vw;
+    display: block;
+    margin: 40px auto;
+}
 .main-content{
     width: 70vw;
     display: block;
@@ -502,6 +507,9 @@ div.error-message{
 .wp-block-column .wp-block-image.size-full{
     height: 100%;
 }
+.front-main-content .wp-block-column{
+    height: 100%;
+}
 
 .project-image img{
     max-width: 40vw;
@@ -534,6 +542,8 @@ div.error-message{
 /*ARCHIVE PAGE*/
 .archive-main{
     margin: auto;
+    margin-bottom: 24px;
+    min-height: 500px;
 }
 .archive-main ul{
     list-style: none;

@@ -31,18 +31,30 @@ get_header(); ?>
 
 
           <p class="post-tags">
-            <strong>Tags:</strong> 
-            <?php 
-              $post_tags = get_the_tags();
-              if ($post_tags) {
-                  foreach ($post_tags as $tag) {
-                      echo '<a href="' . get_tag_link($tag->term_id) . '">' . $tag->name . '</a>, ';
-                  }
-              } else {
-                  echo 'None';
-              }
-            ?>
-          </p>
+    <strong>Tags:</strong> 
+    <?php 
+      // Display tags
+      $post_tags = get_the_tags();
+      if ($post_tags) {
+          foreach ($post_tags as $tag) {
+              echo '<a href="' . get_tag_link($tag->term_id) . '">' . $tag->name . '</a>, ';
+          }
+      } 
+
+      // Display categories
+      $post_categories = get_the_category();
+      if ($post_categories) {
+          foreach ($post_categories as $category) {
+              echo '<a href="' . get_category_link($category->term_id) . '">' . $category->name . '</a>, ';
+          }
+      }
+
+      // If no tags or categories
+      if (!$post_tags && !$post_categories) {
+          echo 'None';
+      }
+    ?>
+</p>
         </div>
       <?php endwhile; ?>
 

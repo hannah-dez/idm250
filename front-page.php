@@ -5,7 +5,7 @@
         <?php echo get_the_title();?>
     </h1>
 
-    <div class="main-content">
+    <div class="front-main-content">
         <?php echo get_the_content();?>
     </div>
 </main>
