@@ -437,11 +437,10 @@ div.error-message{
 /*ARCHIVE PAGE*/
 .archive-main{
     margin: auto;
-    width: 70vw;
 }
 .archive-main ul{
     list-style: none;
-    width: 70vw;
+    width: 80vw;
     margin: 0px auto;
     display: flex;
     gap: 3vw;
@@ -455,7 +454,7 @@ div.error-message{
 
 .archive .post-main-img{
     border: solid 15px var(--main-green);
-    width: 25vw;
+    width: 20vw;
     margin-bottom: 0px;
 }
 
@@ -464,11 +463,93 @@ div.error-message{
     background-color: var(--main-green);
 }
 
+@media (max-width: 1187px){
+    .archive .post-main-img{
+        width: 30vw;
+    }
+}
 @media (max-width:800px){
     .archive .post-main-img{
         width: 60vw;
     }
     .archive-main ul{
         justify-content: center;
+    }
+}
+
+/*BLOG LISTING PAGE*/
+.blog-list-flex{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+.blog-listing h1{
+    margin-top: 24px;
+}
+.blog-post{
+    width: 25vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 24px auto;
+    background-color: var(--main-green);
+    color: var(--background);
+}
+.blog-post img{
+    justify-self: center;
+    width: 100%;
+    height: auto;
+}
+.blog-post a{
+    color: var(--background);
+    width: 85%;
+}
+.blog-post h2{
+    width: 85%;
+    text-align: left;
+    margin-top: 10px;
+}
+.blog-post p{
+    width: 70%;
+    text-align: left;
+}
+
+.blog-post a img{
+    margin: 15px auto 0px;
+}
+
+.post-tags{
+    background-color: var(--accent-color-one);
+    padding: 10px;
+    color: var(--dark-text);
+}
+
+.post-tags a{
+    color: var(--dark-text);
+    text-decoration: underline;
+}
+
+@media (max-width: 1100px){
+    .blog-post{
+        width: 40vw;
+    }
+}
+
+@media (max-width: 750px){
+    .blog-post{
+        width: 60vw;
+    }
+}
+
+@media (max-width: 450px){
+    .blog-post{
+        width: 80vw;
+    }
+    .blog-listing h1{
+        width: 100%;
     }
 }
